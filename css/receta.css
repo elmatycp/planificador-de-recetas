@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navegacion{
+    height: 66px;
+    width: 100%;
+    background-color: #FFAFCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navegacion a{
+    color: #ffffff;
+    font-family: "Gorditas", serif;
+    font-size: 16px;
+}
+
+.section-header{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+
+}
+
+
+.section-header > header > h1{
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    color: #FFAFCC;
+    margin-bottom: 15px;
+}
+
+.section-header > header > button{
+    height: 30px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: solid #FFAFCC 2px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+    align-items: center;
+}
+
+.section-ingredientes{
+    padding: 0px 20px;
+}
+
+.section-ingredientes > header > h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #FFAFCC;
+    padding: 15px 0px;
+}
+
+.lista-ingrediente{
+    padding-left: 20px;
+}
+
+.lista-ingrediente li{
+    font-family: Montserrat, sans-serif;
+    padding: 4px 0px;
+}
+
+.seccion-descripcion{
+    width: 100%;
+    padding: 0px 20px 30px 20px;
+}
+
+.seccion-descripcion > header > h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #FFAFCC;
+    padding: 15px 0px;
+}
+
+.texto-descripcion{
+    font-family: Montserrat, sans-serif;
+}
+
+.btn-ver-recetas{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 55px;
+    background-color: #FFAFCC;
+    color: #ffffff;
+    font-family: Montserrat, sans-serif;
+    font-weight:bolder;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

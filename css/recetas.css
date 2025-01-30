@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F7F7F7;
+}
+
+/* Header */
+.navegacion{
+    height: 66px;
+    width: 100%;
+    background-color: #FFAFCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navegacion a{
+    color: #ffffff;
+    font-family: "Gorditas", serif;
+    font-size: 16px;
+}
+
+/* seccion buscador */
+.seccion-buscador{
+    width: 100%;
+    height: 160px;
+    background-color: #A2D2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-buscador input{
+    width: 275px;
+    height: 60px;
+    border: none;
+    padding: 10px 55px 10px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.seccion-buscador input:focus{
+    outline: black solid 1px;
+}
+
+.seccion-buscador h1{
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.contenedor-buscador{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.buscador{
+    position: relative;
+}
+
+.btn-limpiar-buscador{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.btn-limpiar-buscador.mostrar{
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn-limpiar-buscador img{
+    width: 24px;
+    height: auto;
+    pointer-events: none;
+}
+
+.contenedor-buscador button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-buscador > button > img{
+    width: 35px;
+    height: auto;
+    pointer-events: none;
+}
+
+
+/* seccion filtro */
+.filtro-de-recetas{
+    padding: 25px 25px 0px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.categoria{
+    height: 30px;
+    font-size: 15px;
+    font-family: Montserrat, sans-serif;
+    border-radius: 5px;
+    border: solid #FFAFCC 3px;
+    background-color: #ffffff;
+    padding: 0px 10px;
+}
+
+.categoria.seleccionada{
+    background-color: #FFAFCC;
+}
+
+/* seccion cards */
+
+.contenedor-cards{
+    width: 100%;
+    height: auto;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card{
+    width: 100%;
+    height: 185px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    transition: all 0.5s ease;
+    margin-bottom: 25px;
+}
+
+.card.ocultar{
+    visibility:hidden;
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.img-card{
+    width: 24px;
+    height: auto;
+}
+
+.descripcion-card{
+    font-size: 12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-family: Montserrat, sans-serif;
+    line-height: 1.6; /* Asegura un espacio consistente entre líneas */
+    max-height: calc(1.6em * 2); /* Calcula el alto exacto para 2 líneas */
+    text-transform: lowercase;
+    word-break: break-word;
+}
+
+.titulo-card{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 19px;
+    align-content: center;
+    color: #FFAFCC;
+    font-family: Montserrat, sans-serif;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 1.5; /* Asegura un espacio consistente entre líneas */
+    max-height: 1.5rem; /* Calcula el alto exacto para 2 líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto es demasiado largo */
+    white-space: nowrap; /* Evita que el texto se desplace a la siguiente línea */
+}
+
+.seccion-btn-ver{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.btn-ver-receta{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+.btn-ver-receta img{
+    pointer-events: none;
+}
+
+.seccion-categoria-tiempo{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    display: flex;
+}
+
+.categoria-card{
+    height: 25px;
+    font-size: 12px;
+    padding: 0px 5px;
+    font-family: Montserrat, sans-serif;
+    outline: solid #FFAFCC 1.5px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+.tiempo-card{
+    font-size: 15px;
+    margin-top: 4px;
+    margin-left: 10px;
+    color: #A2D2FF;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
+
+.descripcion-card{
+    grid-column: 1/4;
+    grid-row: 3/4;
+}
+
+.seccion-btns{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    gap: 20px;
+}
+
+.btn-eliminar-receta{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-eliminar-receta img{
+    pointer-events: none;
+}
+
+.btn-editar-receta{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-editar-receta img{
+    pointer-events: none;
+}
+/* seccion eliminar */
+
+.seccion-eliminar{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5 ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.seccion-eliminar.mostrar{
+    visibility: visible;
+    opacity: 1;
+}
+
+.contenedor-eliminar{
+    width: 300px;
+    height: 250px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenedor-eliminar p{
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    width: 244px;
+    margin: 0 auto;
+}
+
+.receta-seccion-eliminar{
+    color: #FFC8DD;
+}
+
+.contenedor-btns-eliminar{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.contenedor-btns-eliminar button{
+    height: 35px;
+    width: 95px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 800;
+    font-family: Montserrat, sans-serif;
+}
+
+.btn-eliminar{
+    color: #FFC8DD;
+    background-color: transparent;
+    border: #FFC8DD solid 3px;
+}
+
+.btn-cancelar{
+    background-color: #FFC8DD;
+    color: #ffffff;
+    border: #FFC8DD;
+}
+
+
+/* seccion editar */
+
+.seccion-editar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.seccion-editar.mostrar{
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor-seccion-editar{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    transform: translateY(100%);
+    transition: transform 0.6s ease;
+    
+}
+
+@keyframes mostrarAnimacionEditar {
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.contenedor-seccion-editar.mostrarEditar{
+    animation-name: mostrarAnimacionEditar;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+
+.header-seccion-editar{
+    height: 110px;
+    width: 100%;
+    background-color: #A2D2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header-seccion-editar h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.formulario-seccion-editar{
+    padding: 35px;
+    height: 100vh;
+    width: 100%;
+}
+
+.parte-superior{
+    display: grid;
+    grid-template-columns: 185px 130px;
+    grid-template-rows: auto 100px auto;
+    justify-content: center;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.seccion{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.seccion label{
+    color: #A2D2FF;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    
+}
+
+.seccion input, textarea{
+    padding: 10px;
+}
+
+.seccion input, textarea, select{
+    outline: solid #A2D2FF 3px;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    background-color: transparent;
+    color: #4f4f4f;
+}
+
+.seccion.titulo{
+    grid-column: 1/2;
+}
+.seccion.titulo input{
+    width: 185px;
+}
+
+.seccion.categoria-editar{
+    grid-column: 2/3;
+}
+
+.seccion.categoria-editar input{
+    width: 120px;
+}
+
+.seccion.descripcion{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.seccion.descripcion textarea{
+    width: 100%;
+    height: 95px;
+    resize: none;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
+
+
+
+
+.parte-inferior{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo-ingredientes{
+    width: 100%;
+    max-width: 335px;
+    position: relative;
+}
+
+.titulo-ingredientes img{
+    position: absolute;
+    top: -60px;
+    right: -15px;
+}
+
+.parte-inferior p{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #A2D2FF;
+    margin-bottom: 5px;
+}
+
+.seccion-ingredientes{
+    width: 100%;
+    height: 280px;
+    padding: 10px;
+    border: solid #A2D2FF 3px;
+    border-radius: 5px;
+    max-width: 335px;
+}
+
+.contenedor-agregar-ingrediente{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contenedor-agregar-ingrediente input{
+    outline: solid #FFC8DD 3px;
+    border: none;
+    border-radius: 2px;
+    height: 30px;
+    width: 100%;
+    background-color: transparent;
+    padding: 0px 10px;
+}
+
+.btn-agregar-ingrediente{
+    min-width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #FFC8DD;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 32px;
+    border: none;
+    text-align: center;
+}
+
+.contenedor-ingredientes{
+    width: 100%;
+    height: 220px;
+    overflow-y: scroll;
+}
+
+.ingrediente{
+    display: flex;
+    width: 100%;
+    min-height: 30px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.contenedor-texto-ingrediente{
+    width: 88%;
+    height: auto;
+    padding-right: 10px;
+    word-break: break-word;
+}
+
+.texto-ingrediente{
+    font-family: Montserrat, sans-serif;
+    font-size: 12px !important;
+    color: #000000 !important;
+}
+
+.btn-eliminar-receta-editar{
+    border: none;
+    background-color: transparent;
+}
+
+.btn-eliminar-receta-editar img{
+    width: 24px;
+    height: auto;
+    pointer-events: none;
+}
+    
+
+.contenedor-btns-editar{
+    max-width: 335px;
+    margin: 0px auto;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    gap: 37px;
+    margin-top: 25px;
+}
+
+.btn-cancelar-editar{
+    border: solid #A2D2FF 3px;
+    background-color: transparent;
+    color: #A2D2FF;
+    border-radius: 5px;
+    width: 125px;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-guardar-editar{
+    background-color: #A2D2FF;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    width: 175px;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/* notificacion */
+
+.notificacion-eliminado{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(90px);
+    transition: transform 0.5s ease;
+}
+
+.notificacion-eliminado img{
+    height: 35px;
+    width: auto;
+}
+
+@keyframes notificacion-mostrar{
+    0%{
+        transform: translateX(90px);
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+@keyframes notificacion-ocultar{
+    0%{
+        transform: translateX(0px);
+    }
+
+    100%{
+        transform: translateX(90px);
+    }
+}
+
+.notificacion-eliminado.mostrar{
+    animation-name: notificacion-mostrar;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+.notificacion-eliminado.ocultar{
+    animation-name: notificacion-ocultar;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+
+@media(max-width: 400px){
+    body{
+        position: relative;
+    }
+
+    .seccion-editar{
+        position: absolute;
+        height: auto;
+        overflow-y: hidden;
+        background-color: #ffffff;
+    }
+
+    .formulario-seccion-editar{
+        height: 100%;
+        overflow-y: hidden;
+    }
+    
+    .contenedor-seccion-editar{
+        height: auto;
+    }
+
+    .formulario-seccion-editar{
+        background-color: #ffffff;
+    }
+
+    .contenedor-cards.ocultar{
+        height: 0px;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+    }
+}

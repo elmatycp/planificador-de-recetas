@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifica tus recetas</title>
+    <link rel="stylesheet" href="css/recetas.css">
+</head>
+<body> 
+    <header class="header">
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+
+    <section class="seccion-buscador">
+        <h1>Recetas</h1>
+        <section class="contenedor-buscador">
+            <section class="buscador">
+                <input type="text" placeholder="Buscador" id="input-buscador">
+                <button class="btn-limpiar-buscador"><img src="img/x.png" alt="x"></button>
+            </section>
+            <button class="btn-buscar-receta"><img src="img/busqueda.png" alt="Buscador"></button>
+        </section>
+    </section>
+
+    <main class="contenedor-principal">
+        <section class="filtro-de-recetas">
+            <button class="categoria" data-categoria="todo">Todo</button>
+            <button class="categoria" data-categoria="desayuno">Desayuno</button>
+            <button class="categoria" data-categoria="almuerzo">Almuerzo</button>
+            <button class="categoria" data-categoria="cena">Cenas</button>
+            <button class="categoria" data-categoria="postre">Postres</button>
+            <button class="categoria" data-categoria="snacks">Snacks</button>
+            <button class="categoria" data-categoria="bebida">Bebidas</button>
+            <button class="categoria" data-categoria="ensalada">Ensaladas</button>
+            <button class="categoria" data-categoria="sopa">Sopas</button>
+            <button class="categoria" data-categoria="entrada">Entradas</button>
+            <button class="categoria" data-categoria="acompañamiento">Acompañamientos</button>
+            <button class="categoria" data-categoria="salsa y aderezo">Salsas y Aderezos</button>
+            <button class="categoria" data-categoria="otro">Otros</button>
+        </section>
+        <section class="contenedor-cards" id="contenedor-cards">
+            <template id="template-card">
+                <figure class="card">
+                    <h6 class="titulo-card"></h6>
+                    <section class="seccion-btn-ver">
+                        <button class="btn-ver-receta"><img src="img/ojo-abierto.png" alt="Ver receta" class="img-card"></button>
+                    </section>
+                    <section class="seccion-categoria-tiempo">
+                        <button class="categoria-card"></button>
+                        <p class="tiempo-card"></p>
+                    </section>
+                    <p class="descripcion-card"></p>
+                    <section class="seccion-btns">
+                        <button class="btn-eliminar-receta"><img src="img/basura.png" alt="basurero" class="img-card"></button>
+                        <button class="btn-editar-receta"><img src="img/rebautizar (2).png" alt="editar" class="img-card"></button>
+                    </section>
+                </figure>
+            </template>
+        </section>
+    </main>
+
+    <section class="seccion-eliminar">
+        <article class="contenedor-eliminar">
+            <p>¿Quieres eliminar la receta <span class="receta-seccion-eliminar">Ejemplo de receta</span>?</p>
+            <section class="contenedor-btns-eliminar">
+                <button class="btn-eliminar">Eliminar</button>
+                <button class="btn-cancelar">Cancelar</button>
+            </section>
+        </article>
+    </section>
+
+    <section class="seccion-editar">
+        <section class="contenedor-seccion-editar">
+            <header class="header-seccion-editar">
+                <h2>Editar Receta</h2>
+            </header>
+            <form class="formulario-seccion-editar">
+                <section class="parte-superior">
+                    <section class="seccion titulo">
+                        <label>Titulo</label>
+                        <input type="text" class="input-titulo">
+                    </section>
+                    <section class="seccion categoria-editar">
+                        <label>Categoria</label>
+                        <select id="select-categoria" class="input-categoria">
+                            <option value="desayuno">Desayuno</option>
+                            <option value="almuerzo">Almuerzo</option>
+                            <option value="cena">Cena</option>
+                            <option value="postre">Postre</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="bebida">Bebida</option>
+                            <option value="ensalada">ensalada</option>
+                            <option value="sopa">Sopa</option>
+                            <option value="entrada">Entrada</option>
+                            <option value="acompañamiento">Acompañamiento</option>
+                            <option value="salsa y aderezo">Salsa y aderezo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </section>
+                    <section class="seccion descripcion">
+                        <label>Pasos</label>
+                        <textarea class="textarea-descripcion"></textarea>
+                    </section>
+                    <section class="seccion tiempo">
+                        <label>Tiempo</label>
+                        <input type="text" class="input-tiempo">
+                    </section>
+                </section>
+                <section class="parte-inferior">
+                    <section class="titulo-ingredientes">
+                        <p>Ingredientes</p>
+                        <img src="img/619dddb85e96dd5b7597eec70d0cf019 1.png" alt="monito azul como avatar jajaja">
+                    </section>
+                    <section class="seccion-ingredientes">
+                        <section class="contenedor-agregar-ingrediente">
+                            <input type="text" placeholder="Agregar Ingrediente" class="input-agregar-editar">
+                            <button class="btn-agregar-ingrediente">+</button>
+                        </section>
+                        <section class="contenedor-ingredientes"></section>
+                        <template id="template-ingrediente">
+                            <article class="ingrediente">
+                                <section class="contenedor-texto-ingrediente">
+                                    <p class="texto-ingrediente"></p>
+                                </section>
+                                <button class="btn-eliminar-receta-editar">
+                                    <img src="img/basura.png" alt="basurero">
+                                </button>
+                            </article>
+                        </template>
+                    </section>
+                </section>
+                <section class="contenedor-btns-editar">
+                    <button class="btn-cancelar-editar">Cancelar</button>
+                    <button class="btn-guardar-editar">Guardar</button>
+                </section>
+            </form>
+        </section>
+    </section>
+
+    <article class="notificacion-eliminado">
+        <img src="img/basura (2).png" alt="basurero">
+    </article>
+
+    <script src="js/pag-2.js"></script>
+    <script src="js/recetas.js"></script>
+</body>
+</html>

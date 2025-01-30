@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifica tus recetas</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+        </nav>
+        <section class="contenedor-titulo">
+            <h1>Planificador <br>de recetas</h1>
+            <img src="img/pngwing.com (6).png" alt="hello kitty cocinando">
+        </section>
+    </header>
+    <main class="contenedor-principal">
+        <section class="seccion-agregar-receta">
+            <button class="btn-agregra-receta" id="btn-crear-receta">Agregar nueva receta</button>
+        </section>
+        <section class="seccion-recetas">
+            <button class="btn-libro-recetas" id="btn-libro-recetas"><img src="img/libro-de-recetas.png" alt="Libro de recetas"></button>
+        </section>
+    </main>
+    <section class="contenedor-modal">
+        <article class="ventana-modal">
+            <h2>Agregar Receta</h2>
+            <form class="formulario">
+                <section class="seccion-titulo">
+                    <label class="label">Titulo de la receta:</label>
+                    <input type="text" id="input-titulo" class="input" placeholder="Ej. Onigiri" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]+$" title="Solo se permiten letras, números y espacios" required>
+                </section>
+                <section class="seccion-categoria">
+                    <label class="label">Categoria:</label>
+                    <select id="select-categoria" class="input">
+                        <option value="desayuno">Desayuno</option>
+                        <option value="almuerzo">Almuerzo</option>
+                        <option value="cena">Cena</option>
+                        <option value="postre">Postre</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="bebida">Bebida</option>
+                        <option value="ensalada">ensalada</option>
+                        <option value="sopa">Sopa</option>
+                        <option value="entrada">Entrada</option>
+                        <option value="acompañamiento">Acompañamiento</option>
+                        <option value="salsa y aderezo">Salsa y aderezo</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </section>
+                <section class="seccion-ingredientes">
+                    <label class="label">Ingredientes:</label>
+                    <div class="contenedor-input-ingredientes">
+                        <input type="text" id="input-ingredientes" class="input" placeholder="Ej. 2 tomates">
+                        <button id="btn-agregar-ingrediente">+</button>
+                    </div>
+                </section>
+                <section class="seccion-pasos">
+                    <label class="label">Pasos:</label>
+                    <textarea id="input-textarea" class="input" placeholder="Describe los pasos de la receta"></textarea>
+                </section>
+                <section class="seccion-tiempo">
+                    <label class="label">Tiempo de preparacion (min)</label>
+                    <input type="text" class="input" id="input-tiempo" placeholder="Ej. 30 min">
+                </section>
+                <section class="seccion-botones">
+                    <button class="btn-cancelar-formulario">Cancelar</button>
+                    <button class="btn-guardar-formulario">Guardar</button>
+                </section>
+            </form>
+        </article>
+    </section>
+    <article class="notificacion-de-creacion">
+        <img src="img/pulgar-arriba-confianza.png" alt="Pulgar arriba">
+    </article>
+    <script src="js/home.js"></script>
+</body>
+</html>
